@@ -142,7 +142,7 @@
             // Because chrome needs a handler this ugly fix is inside the request permission function
             // jQuery 1.9 no longer has the $.browser so this check looks for chrome in the browser agent.
             var browserAgent = navigator.userAgent.toString().toLowerCase();
-            if (browserAgent.indexOf('chrome') === -1) {
+            if(/chrom(e|ium)/.test(browserAgent)) {
 
                 Notification.requestPermission(function () {
                     self.permissionHandler();
